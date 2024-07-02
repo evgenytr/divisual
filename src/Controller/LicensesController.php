@@ -129,20 +129,15 @@ class LicensesController extends AppController
             $salt = "sdfsdokSIOJ83joioCVBNMoihgfgnlllkjjtsaqwerpkjhedc34567ygv34edc6tg";  
             $reqsalt= $this->request->getQuery('salt');  
             if( md5($salt.date("j:n:Y")) != $reqsalt ) return;
-            /*
+          
             $gateway = new \Braintree\Gateway([
                 'environment' => 'sandbox',
                 'merchantId' => 'ythdbgtqpynpv2pd',
                 'publicKey' => 'jz7j3jczgnjsj7px',
                 'privateKey' => 'c5d4910ba1456b75a90555a6442f6c29'
             ]);
-            */
-            $gateway = new \Braintree\Gateway([
-                'environment' => 'production',
-                'merchantId' => 'm6synqg682wb6q86',
-                'publicKey' => '9p8nq9233qy4gptg',
-                'privateKey' => '2768f73a2c4d382c69e819026c1b9b0d'
-            ]);
+        
+        
 
                 
             //check if license exists or not
