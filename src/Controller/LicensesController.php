@@ -396,20 +396,15 @@ class LicensesController extends AppController
                 
                 if($requestData['serial']!="" && $license['serial']==$requestData['serial'])
                 {
-                    $gateway = new \Braintree\Gateway([
-                        'environment' => 'production',
-                        'merchantId' => 'm6synqg682wb6q86',
-                        'publicKey' => '9p8nq9233qy4gptg',
-                        'privateKey' => '2768f73a2c4d382c69e819026c1b9b0d'
-                    ]);
-                        /*
+             
+                     
                         $gateway = new \Braintree\Gateway([
                             'environment' => 'sandbox',
                             'merchantId' => 'ythdbgtqpynpv2pd',
                             'publicKey' => 'jz7j3jczgnjsj7px',
                             'privateKey' => 'c5d4910ba1456b75a90555a6442f6c29'
                         ]);
-                          */
+                      
                           
                     $result = $gateway->subscription()->find($license['subscription_id']);
                     
